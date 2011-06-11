@@ -1,9 +1,10 @@
 
 require 'swt/jar'
 require 'swt/event_loop'
+require 'swt/cucumber_runner'
 
 module Swt
-  VERSION = "0.1"
+  VERSION = "0.2"
   
   import org.eclipse.swt.SWT
   
