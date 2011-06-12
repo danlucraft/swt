@@ -1,7 +1,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "swt"
-  s.version     = "0.3"
+  s.version     = "0.4"
   s.platform    = "java"
   s.authors     = ["Daniel Lucraft"]
   s.email       = ["dan@fluentradical.com"]
