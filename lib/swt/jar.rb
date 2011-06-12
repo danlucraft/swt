@@ -22,10 +22,8 @@ module Swt
 
   path = File.expand_path(File.dirname(__FILE__) + "/../" + Swt.jar_path)
   if File.exist?(path + ".jar")
-    puts "loading #{Swt.jar_path}"
     require path
   else
-    puts "SWT jar file required: #{path}.jar"
-    exit
+    raise "SWT jar file required: #{path}.jar"
   end
 end
