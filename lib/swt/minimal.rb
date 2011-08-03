@@ -77,4 +77,12 @@ module Swt
   end
 
   display # must be created before we import the Clipboard class.
+  
+  def self.event_loop(&condition)
+    display = Swt::Widgets::Display.current
+    until condition[]
+      display.sleep unless display.read_and_dispatch
+    end
+    display.dispose
+  end
 end
