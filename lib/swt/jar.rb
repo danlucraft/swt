@@ -11,7 +11,7 @@ module Swt
       if Config::CONFIG["host_cpu"] == "x86_64"
         '../../../vendor/swt_osx64'
       else
-        '../../../vendor/swt_osx'
+        '../../../vendor/swt_osx_3_7'
       end
     when /linux/i
       if %w(amd64 x84_64).include? Config::CONFIG["host_cpu"]
