@@ -11,6 +11,6 @@ Gem::Specification.new do |s|
  
   s.files        = Dir.glob("{bin,lib}/**/*") + %w(LICENSE README.md) + 
                      Dir.glob("vendor/jface/*.jar") + Dir.glob("vendor/*.jar")
-  s.executables  = []
+  s.executables  = ["swt_cucumber"]
   s.require_path = 'lib'
 end

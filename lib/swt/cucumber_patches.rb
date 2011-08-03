@@ -9,7 +9,7 @@ module Cucumber
       def invoke_with_swt(step_mother, options)
         block = Swt::RRunnable.new { invoke_without_swt(step_mother, options) }
 
-        Redcar::ApplicationSWT.display.syncExec(block)
+        Swt.sync_exec(&block)
         sleep ENV["SLOW_CUKES"].to_f if ENV["SLOW_CUKES"]
         sleep(Cucumber::Ast::StepInvocation.wait_time || 0)
         Cucumber::Ast::StepInvocation.wait_time = nil

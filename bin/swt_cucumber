@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'java'
+$:.unshift(File.expand_path("../../lib", __FILE__))
+require 'swt'
+
+runner = Swt::CucumberRunner.new
+runner.run_features(ARGV)
+Swt.event_loop { runner.tests_finished? }
+

@@ -78,11 +78,30 @@ module Swt
 
   display # must be created before we import the Clipboard class.
   
-  def self.event_loop(&condition)
+  def self.event_loop(&stop_condition)
+    stop_conditions << stop_condition
+    run_event_loop
+  end
+  
+  def self.stop_conditions
+    @stop_conditions ||= []
+  end
+  
+  def self.event_loop_running?
+    @event_loop_running
+  end
+  
+  def self.run_event_loop
+    return if event_loop_running?
+    @event_loop_running = true
     display = Swt::Widgets::Display.current
-    until condition[]
+    until stop_conditions.any? {|c| c[] }
       display.sleep unless display.read_and_dispatch
     end
     display.dispose
+    true
   end
 end
+
+
+
