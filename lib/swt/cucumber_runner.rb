@@ -14,7 +14,7 @@ module Swt
       require "cucumber/cli/main"
       require "cucumber"
       require "cucumber/rb_support/rb_language"
-      require "swt/cucumber_patches"
+      # require "swt/cucumber_patches"
       Thread.new do
         begin
           sleep START_DELAY
