@@ -95,11 +95,23 @@ module Swt
     return if event_loop_running?
     @event_loop_running = true
     display = Swt::Widgets::Display.current
+    
     until stop_conditions.any? {|c| c[] }
-      display.sleep unless display.read_and_dispatch
+      unless display.read_and_dispatch
+        display.sleep
+      end
     end
+    
     display.dispose
-    true
+  end
+  
+  def self.bot
+    @bot ||= begin
+      Dir[File.expand_path("../../../vendor/swtbot", __FILE__) + "/*.jar"].each do |fn|
+        require fn
+      end
+      org.eclipse.swtbot.swt.finder.SWTBot.new
+    end
   end
 end
 

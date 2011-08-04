@@ -8,4 +8,4 @@ require 'swt'
 runner = Swt::CucumberRunner.new
 runner.run_features(ARGV)
 Swt.event_loop { runner.tests_finished? }
-
+exit(runner.exit_code)

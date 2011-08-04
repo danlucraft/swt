@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.description = "Includes SWT jars and imports SWT classes into Ruby."
  
   s.files        = Dir.glob("{bin,lib}/**/*") + %w(LICENSE README.md) + 
-                     Dir.glob("vendor/jface/*.jar") + Dir.glob("vendor/*.jar")
+                     Dir.glob("vendor/**/*")
   s.executables  = ["swt_cucumber"]
   s.require_path = 'lib'
 end

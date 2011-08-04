@@ -6,6 +6,10 @@ module Swt
       @tests_finished
     end
     
+    def exit_code
+      @is_fail ? 1 : 0
+    end
+    
     def run_features(args)
       require "cucumber/cli/main"
       require "cucumber"
@@ -15,8 +19,9 @@ module Swt
         begin
           sleep START_DELAY
           main = Cucumber::Cli::Main.new(args)
-          main.execute!
+          @is_fail = main.execute!
           @tests_finished = true
+          Swt.sync_exec {}
         rescue Object => e
           puts e.message
           puts e.backtrace
