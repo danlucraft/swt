@@ -1,6 +1,19 @@
-All files in the directory "vendor" are provided to you under the 
-terms and conditions of the Eclipse Public License Version 1.0 ("EPL"). 
-A copy of the EPL is available at http://www.eclipse.org/legal/epl-v10.html
+All files in the directories "vendor/swt" and "vendor/jface" are provided to 
+you under the terms and conditions of the Eclipse Public License Version 1.0 
+("EPL"). A copy of the EPL is available at 
+http://www.eclipse.org/legal/epl-v10.html
+
+Other files:
+
+ * All org.eclipse.swtbot.*.jar files are also provided under the EPL.
+
+ * The file org.apache.log4j.*.jar is provided under the Apache License 2.0, 
+   a copy of which is available here: 
+   http://www.apache.org/licenses/LICENSE-2.0
+  
+ * All org.hamcrest.*.jar files are provided under the BSD license, a copy
+   of which is available here: 
+   http://code.google.com/p/hamcrest/source/browse/trunk/hamcrest-java/LICENSE.txt
 
 Unless specified in the file itself, the contents of all other files in this 
 repository are provided to you under the following license (MIT):
