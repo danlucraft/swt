@@ -9,18 +9,22 @@ module Swt
     case Config::CONFIG["host_os"]
     when /darwin/i
       if Config::CONFIG["host_cpu"] == "x86_64"
-        '../../../vendor/swt_osx64'
+        '../../../vendor/swt/swt-osx64'
       else
-        '../../../vendor/swt_osx_3_7'
+        '../../../vendor/swt/swt-osx32'
       end
     when /linux/i
       if %w(amd64 x84_64).include? Config::CONFIG["host_cpu"]
-        '../../../vendor/swt_linux64'
+        '../../../vendor/swt/swt-linux64'
       else
-        '../../../vendor/swt_linux'
+        '../../../vendor/swt/swt-linux32'
       end
     when /windows|mswin/i
-      '../../../vendor/swt_win32'
+      if %w(amd64 x84_64).include? Config::CONFIG["host_cpu"]
+        '../../../vendor/swt/swt-win64'
+      else
+        '../../../vendor/swt/swt-win32'
+      end
     end
   end
 

@@ -1,10 +1,10 @@
 
-require 'swt/jar'
+require 'swt/jar_loader'
 require 'swt/event_loop'
 require 'swt/cucumber_runner'
 
 module Swt
-  VERSION = "0.8"
+  VERSION = "0.9" # also change in swt.gemspec
   
   import org.eclipse.swt.SWT
   
