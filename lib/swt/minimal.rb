@@ -104,15 +104,6 @@ module Swt
     
     display.dispose
   end
-  
-  def self.bot
-    @bot ||= begin
-      Dir[File.expand_path("../../../vendor/swtbot", __FILE__) + "/*.jar"].each do |fn|
-        require fn
-      end
-      org.eclipse.swtbot.swt.finder.SWTBot.new
-    end
-  end
 end
 
 

@@ -1,3 +1,4 @@
+require 'swt/swt_bot_extensions'
 
 module Swt
   import org.eclipse.swt.SWT
@@ -85,6 +86,17 @@ module Swt
   import org.eclipse.swt.browser.Browser
   class Browser
     import org.eclipse.swt.browser.BrowserFunction
+  end
+  
+  def self.bot
+    @bot ||= begin
+      Dir[File.expand_path("../../../vendor/swtbot", __FILE__) + "/*.jar"].each do |fn|
+        require fn
+      end
+      bot = org.eclipse.swtbot.swt.finder.SWTBot.new
+      bot.extend SwtBotExtensions
+      bot
+    end
   end
 end
 
