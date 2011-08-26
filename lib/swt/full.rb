@@ -80,6 +80,8 @@ module Swt
     import org.eclipse.swt.events.KeyEvent
     import org.eclipse.swt.events.MouseListener
     import org.eclipse.swt.events.MouseTrackListener
+    import org.eclipse.swt.events.SelectionListener
+    import org.eclipse.swt.events.KeyListener
   end
 
   import org.eclipse.swt.browser.Browser
