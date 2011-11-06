@@ -48,18 +48,22 @@ module Swt
 
   # Runs the given block in the SWT Event thread
   def self.sync_exec(&block)
+    error = nil
+    result = nil
     runnable = Swt::RRunnable.new do
       begin
-        block.call
+        result = block.call
       rescue => e
-        puts "error in sync exec"
-        puts e.message
-        puts e.backtrace
+        error = e
       end
     end
     unless display.is_disposed
       display.syncExec(runnable)
+      if error
+        raise error
+      end
     end
+    result
   end
   
   # Runs the given block in the SWT Event thread after
