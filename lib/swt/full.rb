@@ -43,9 +43,6 @@ module Swt
   module DND
     import org.eclipse.swt.dnd.DND
 
-    # Only load Clipboard in full running mode.
-    import org.eclipse.swt.dnd.Clipboard
-
     import org.eclipse.swt.dnd.Transfer
     import org.eclipse.swt.dnd.TextTransfer
     import org.eclipse.swt.dnd.FileTransfer

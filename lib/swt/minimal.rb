@@ -74,14 +74,18 @@ module Swt
   end
 
   def self.display
-    if defined?(SWT_APP_NAME)
-      Swt::Widgets::Display.app_name = SWT_APP_NAME
+    @display ||= begin
+      if defined?(SWT_APP_NAME)
+        Swt::Widgets::Display.app_name = SWT_APP_NAME
+      end
+      display ||= (Swt::Widgets::Display.getCurrent || Swt::Widgets::Display.new)
+      
+      # clipboard class must be imported after the display is created
+      Swt::DND.send(:import, org.eclipse.swt.dnd.Clipboard)
+      display
     end
-    @display ||= (Swt::Widgets::Display.getCurrent || Swt::Widgets::Display.new)
   end
 
-  display # must be created before we import the Clipboard class.
-  
   def self.event_loop(&stop_condition)
     stop_conditions << stop_condition
     run_event_loop
@@ -98,15 +102,15 @@ module Swt
   def self.run_event_loop
     return if event_loop_running?
     @event_loop_running = true
-    display = Swt::Widgets::Display.current
+    this_display = display
     
     until stop_conditions.any? {|c| c[] }
-      unless display.read_and_dispatch
-        display.sleep
+      unless this_display.read_and_dispatch
+        this_display.sleep
       end
     end
     
-    display.dispose
+    this_display.dispose
   end
 end
 
