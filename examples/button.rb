@@ -6,17 +6,20 @@ require 'swt'
 class ButtonExample
 
   def initialize
-    # A Display is the connection between SWT and the native GUI. (jruby-swt-cookbook/apidocs/org/eclipse/swt/widgets/Display.html)
+    # A Display is the connection between SWT and the native GUI.
     display = Swt::Widgets::Display.get_current
   
-    # A Shell is a window in SWT parlance. (jruby-swt-cookbook/apidocs/org/eclipse/swt/widgets/Shell.html)
+    # A Shell is a window in SWT parlance.
     @shell = Swt::Widgets::Shell.new
+    
+    # Set the window title bar text
+    @shell.text = "Button Example"
     
     # A Shell must have a layout. FillLayout is the simplest.
     layout = Swt::Layout::FillLayout.new
     @shell.setLayout(layout)
 
-    # Create a button widget (jruby-swt-cookbook/apidocs/org/eclipse/swt/widgets/Button.html)
+    # Create a button widget
     button = Swt::Widgets::Button.new(@shell, Swt::SWT::PUSH)
     button.set_text("Click Me")
     
