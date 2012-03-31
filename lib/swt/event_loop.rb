@@ -10,8 +10,14 @@ module Swt
       @running = true
       @display = Swt.display
       while @running and not @display.disposed?
-        unless read = @display.read_and_dispatch
-          @display.sleep
+        begin
+          unless read = @display.read_and_dispatch
+            @display.sleep
+          end
+        rescue java.lang.Throwable => e
+          puts "Error in Event Loop:"
+          p e
+          puts e.backtrace
         end
       end
       @display.dispose
