@@ -8,7 +8,7 @@ module Swt
   def self.relative_jar_path
     case Config::CONFIG["host_os"]
     when /darwin/i
-      if Config::CONFIG["host_cpu"] == "x86_64"
+      if Config::CONFIG["host_cpu"] =~ /64/
         '../../../vendor/swt/swt-osx64'
       else
         '../../../vendor/swt/swt-osx32'
