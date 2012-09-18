@@ -6,21 +6,21 @@ module Swt
   end
   
   def self.relative_jar_path
-    case Config::CONFIG["host_os"]
+    case RbConfig::CONFIG["host_os"]
     when /darwin/i
-      if Config::CONFIG["host_cpu"] == "x86_64"
+      if RbConfig::CONFIG["host_cpu"] == "x86_64"
         '../../../vendor/swt/swt-osx64'
       else
         '../../../vendor/swt/swt-osx32'
       end
     when /linux/i
-      if %w(amd64 x84_64).include? Config::CONFIG["host_cpu"]
+      if %w(amd64 x86_64).include? RbConfig::CONFIG["host_cpu"]
         '../../../vendor/swt/swt-linux64'
       else
         '../../../vendor/swt/swt-linux32'
       end
     when /windows|mswin/i
-      if %w(amd64 x84_64).include? Config::CONFIG["host_cpu"]
+      if %w(amd64 x86_64).include? RbConfig::CONFIG["host_cpu"]
         '../../../vendor/swt/swt-win64'
       else
         '../../../vendor/swt/swt-win32'
