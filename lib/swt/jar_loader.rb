@@ -2,7 +2,7 @@ require 'rbconfig'
 
 module Swt
 
-  X64_BIT_CPUS = %w(amd64 x84_64 x86_64)
+  X64_BIT_CPUS = %w(amd64 x86_64)
 
   def self.jar_path
     @jar_path ||= File.expand_path(relative_jar_path, __FILE__)
