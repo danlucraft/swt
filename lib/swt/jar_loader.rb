@@ -5,7 +5,7 @@ module Swt
   X64_BIT_CPUS = %w(amd64 x84_64 x86_64)
 
   def self.jar_path
-    File.expand_path(relative_jar_path, __FILE__)
+    @jar_path ||= File.expand_path(relative_jar_path, __FILE__)
   end
 
   def self.relative_jar_path
