@@ -1,7 +1,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "swt"
-  s.version     = "0.14" # also change in lib/swt/minimal.rb
+  s.version     = "0.15" # also change in lib/swt/minimal.rb
   s.platform    = "ruby"
   s.authors     = ["Daniel Lucraft"]
   s.email       = ["dan@fluentradical.com"]
