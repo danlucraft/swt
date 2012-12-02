@@ -4,7 +4,7 @@ require 'swt/event_loop'
 require 'swt/cucumber_runner'
 
 module Swt
-  VERSION = "0.13" # also change in swt.gemspec
+  VERSION = "0.14" # also change in swt.gemspec
   
   import org.eclipse.swt.SWT
   
