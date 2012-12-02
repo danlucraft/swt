@@ -101,7 +101,7 @@ module Swt
 end
 
 module JFace
-  Dir[File.dirname(__FILE__) + "/../../vendor/jface/*.jar"].each do |jar_fn|
+  Dir[File.expand_path "../../../vendor/jface/*.jar", __FILE__].each do |jar_fn|
     require jar_fn
   end
 
