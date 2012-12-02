@@ -6,9 +6,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Daniel Lucraft"]
   s.email       = ["dan@fluentradical.com"]
   s.homepage    = "http://github.com/danlucraft/swt"
-  s.summary     = "The SWT library available to JRuby."
-  s.description = "Includes SWT jars and imports SWT classes into Ruby."
- 
+  s.summary     = "The SWT toolkit for JRuby."
+  s.description = "Contains everything required to write cross-platform desktop applications with JRuby and SWT."
   s.files        = Dir.glob("{bin,lib}/**/*") + %w(LICENSE README.md) + 
                      Dir.glob("vendor/**/*")
   s.executables  = ["swt_cucumber"]
