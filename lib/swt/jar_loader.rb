@@ -9,7 +9,7 @@ module Swt
   end
 
   def self.relative_jar_path
-    case Config::CONFIG["host_os"]
+    case RbConfig::CONFIG["host_os"]
     when /darwin/i
       if x64_bit_cpu?
         '../../../vendor/swt/swt-osx64'
@@ -32,7 +32,7 @@ module Swt
   end
 
   def self.x64_bit_cpu?
-    X64_BIT_CPUS.include? Config::CONFIG["host_cpu"]
+    X64_BIT_CPUS.include? RbConfig::CONFIG["host_cpu"]
   end
 
   if File.exist?(jar_path + ".jar")
