@@ -1,7 +1,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "swt"
-  s.version     = "0.17" # also change in lib/swt/minimal.rb
+  s.version     = "0.18" # also change in lib/swt/minimal.rb
   s.platform    = "ruby"
   s.authors     = ["Daniel Lucraft"]
   s.email       = ["dan@fluentradical.com"]
@@ -12,4 +12,5 @@ Gem::Specification.new do |s|
                      Dir.glob("vendor/**/*")
   s.executables  = ["swt_cucumber"]
   s.require_path = 'lib'
+  s.license      = "Various. (See https://github.com/danlucraft/swt/blob/master/LICENSE)"
 end
