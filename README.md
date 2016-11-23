@@ -34,3 +34,6 @@ On OSX:
 
     jruby -J-XstartOnFirstThread examples/button.rb
   
+## History
+
+**4.6** Removed MacOS 32 bit support (SWT project doesn't seem to support it any more)
