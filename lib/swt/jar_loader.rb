@@ -14,7 +14,7 @@ module Swt
       if x64_bit_cpu?
         '../../../vendor/swt/swt-osx64'
       else
-        '../../../vendor/swt/swt-osx32'
+        raise 'No 32 bit Mac OSX SWT jar available :('
       end
     when /linux/i
       if x64_bit_cpu?
