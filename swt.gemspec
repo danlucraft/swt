@@ -3,8 +3,8 @@ Gem::Specification.new do |s|
   s.name        = "swt"
   s.version     = "4.6.1" # also change in lib/swt/minimal.rb
   s.platform    = "ruby"
-  s.authors     = ["Daniel Lucraft"]
-  s.email       = ["dan@fluentradical.com"]
+  s.authors     = ["Daniel Lucraft", "Tobias Pfeiffer"]
+  s.email       = ["dan@lucraft.me", "pragtob@gmail.com"]
   s.homepage    = "http://github.com/danlucraft/swt"
   s.summary     = "The SWT toolkit for JRuby."
   s.description = "Contains everything required to write cross-platform desktop applications with JRuby and SWT."
