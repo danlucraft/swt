@@ -1,10 +1,9 @@
+require 'swt/version'
 require 'swt/jar_loader'
 require 'swt/event_loop'
 require 'swt/cucumber_runner'
 
 module Swt
-  VERSION = "4.6.1" # also change in swt.gemspec
-
   import org.eclipse.swt.SWT
 
   module Widgets
