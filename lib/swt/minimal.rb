@@ -1,4 +1,3 @@
-
 require 'swt/jar_loader'
 require 'swt/event_loop'
 require 'swt/cucumber_runner'
