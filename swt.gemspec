@@ -1,7 +1,8 @@
+require File.expand_path('lib/swt/version')
 
 Gem::Specification.new do |s|
   s.name        = "swt"
-  s.version     = "4.6.1" # also change in lib/swt/minimal.rb
+  s.version     = Swt::VERSION
   s.platform    = "ruby"
   s.authors     = ["Daniel Lucraft", "Tobias Pfeiffer"]
   s.email       = ["dan@lucraft.me", "pragtob@gmail.com"]
